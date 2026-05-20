@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ISTE Intro</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  overflow:hidden;
+  background:black;
+  font-family:sans-serif;
+}
+
+/* MAIN SCREEN */
+
+#intro{
+  position:fixed;
+  inset:0;
+  background:black;
+  overflow:hidden;
+}
+
+/* LEFT PANEL */
+
+.left-door{
+  position:absolute;
+
+  left:0;
+  top:0;
+
+  width:50%;
+  height:100%;
+
+  background:
+  linear-gradient(
+    135deg,
+    #441f00,
+    #3f1b00
+  );
+
+  clip-path:
+  polygon(
+    0 0,
+    100% 50%,
+    0 100%
+  );
+
+  box-shadow:
+  0 0 120px cyan;
+
+  animation:
+  leftOpen 2s ease-in-out forwards;
+}
+
+/* RIGHT PANEL */
+
+.right-door{
+  position:absolute;
+
+  right:0;
+  top:0;
+
+  width:50%;
+  height:100%;
+
+  background:
+  linear-gradient(
+    135deg,
+    #441f00,
+    #000
+  );
+
+  clip-path:
+  polygon(
+    100% 0,
+    0 50%,
+    100% 100%
+  );
+
+  box-shadow:
+  0 0 120px rgb(61, 26, 0);
+
+  animation:
+  rightOpen 2s ease-in-out forwards;
+}
+
+/* CENTER TEXT */
+
+.logo{
+  position:absolute;
+
+  top:50%;
+  left:50%;
+
+  transform:
+  translate(-50%,-50%);
+
+  color:white;
+
+  font-size:6rem;
+  font-weight:bold;
+  letter-spacing:12px;
+
+  text-shadow:
+  0 0 20px white,
+  0 0 40px cyan;
+
+  animation:
+  fadeOut 1s ease forwards;
+
+  animation-delay:1s;
+}
+
+/* ANIMATIONS */
+
+@keyframes leftOpen{
+  to{
+    transform:
+    translateX(-120%);
+  }
+}
+
+@keyframes rightOpen{
+  to{
+    transform:
+    translateX(120%);
+  }
+}
+
+@keyframes fadeOut{
+  to{
+    opacity:0;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="intro">
+
+  <div class="left-door"></div>
+
+  <div class="right-door"></div>
+
+  <div class="logo">
+    ISTE
+  </div>
+
+</div>
+
+<script>
+
+setTimeout(()=>{
+
+  window.location.href =
+  "https://www.istemanit.in/";
+
+},2200);
+
+</script>
+
+</body>
+
+</html>
